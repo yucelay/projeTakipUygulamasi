@@ -19,21 +19,31 @@ public class projeEkibiActivity extends AppCompatActivity {
     FirebaseDatabase db;
 
     TextView projeListesiTextView;
-    ListView projeListesiListView;
+    ListView projeListesiListView,listView2;
     projelerDb proje;
 
-    ArrayList<String> projeListesi =new ArrayList<String>();
+    ArrayList<projelerDb> projeListesi =new ArrayList<projelerDb>();
+   // ArrayList<Icecek> icecekler = new ArrayList<Icecek>();
+    OzelAdaptor adaptor;
     ArrayAdapter<String> veriAdaptoru;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proje_ekibi);
         db=FirebaseDatabase.getInstance();
-        projeListesiTextView = findViewById(R.id.projeListesiTextView);
         projeListesiListView = findViewById(R.id.projeListesiListView);
 
-        veriAdaptoru = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,projeListesi);
-        projeListesiListView.setAdapter(veriAdaptoru);
+      //  veriAdaptoru = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,projeListesi);
+      //  projeListesiListView.setAdapter(veriAdaptoru);
+
+      //  icecekler.add(new Icecek("lksdaj",12.45));
+      //  icecekler.add(new Icecek("yeniIcecek",16.45));
+
+        adaptor = new OzelAdaptor(this,projeListesi);
+        projeListesiListView.setAdapter(adaptor);
+
+
+
         projeleriGetirMetodu();
     }
     public void projeleriGetirMetodu(){
@@ -42,13 +52,12 @@ public class projeEkibiActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot gelenler:dataSnapshot.getChildren()){
-                   // projeListesiTextView.append(gelenler.getValue(projelerDb.class).getProjeAdi()+"-");
-                  //  Toast.makeText(projeEkibiActivity.this,gelenler.getValue(projelerDb.class).getProjeAdi()+"",Toast.LENGTH_LONG).show();
                     int projeID = gelenler.getValue(projelerDb.class).getProjeID();
                     String projeAdi = gelenler.getValue(projelerDb.class).getProjeAdi();
                     int personelSayisi = gelenler.getValue(projelerDb.class).getProjedekiPersonelSayisi();
-                    projeListesi.add(projeID+""+ "          "+ projeAdi+"           "+personelSayisi);
-                    veriAdaptoru.notifyDataSetChanged();
+                    projeListesi.add(new projelerDb(projeID,projeAdi,"",personelSayisi));
+                    adaptor.notifyDataSetChanged();
+
                 }
             }
             @Override
@@ -57,4 +66,8 @@ public class projeEkibiActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 }

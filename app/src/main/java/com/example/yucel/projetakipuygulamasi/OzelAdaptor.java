@@ -2,6 +2,7 @@ package com.example.yucel.projetakipuygulamasi;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.NumberFormat;
 import java.util.List;
 
 public class OzelAdaptor extends BaseAdapter {
@@ -41,27 +41,38 @@ public class OzelAdaptor extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View satirView;
-
         satirView=layoutInflater.inflate(R.layout.projeler_satir, null);
-
-        TextView tv=satirView.findViewById(R.id.textViewProjeID);
-        TextView tv2=satirView.findViewById(R.id.textViewProjeAdi);
-        Button button=satirView.findViewById(R.id.butonYeniPersonelEkle);
+        TextView tvProjeID = satirView.findViewById(R.id.projeIDTextView);
+        TextView tvProjeAdi = satirView.findViewById(R.id.projeAdiTextView);
+        TextView tvPersonelSayisi = satirView.findViewById(R.id.projePersonelSayisiTextView);
+        Button personelEkleButon = satirView.findViewById(R.id.personelEkleButon);
+        Button personelBilgileriniGosterButon = satirView.findViewById(R.id.personelBilgileriButon);
 
         final projelerDb projeler=list.get(position);
+        tvProjeID.setText("#"+String.valueOf(projeler.getProjeID()));
+        tvProjeAdi.setText(projeler.getProjeAdi().toString());
+        tvPersonelSayisi.setText(String.valueOf(projeler.getProjedekiPersonelSayisi())+" kişi");
 
-        tv.setText(projeler.getProjeAdi().toString());
-
-        // NumberFormat.getCurrencyInstance().format(0.5); --> 0.5 TL
-
-        tv2.setText(NumberFormat.getCurrencyInstance().format(projeler.getProjeAdi()));
-        button.setOnClickListener(new View.OnClickListener() {
+        personelEkleButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, projeler.getProjeAdi().toString() + " aldınız", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, projeler.getProjeID() + " id li proje secildi", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(activity, personelEkleActivity.class);
+                intent1.putExtra("intentProjeID",projeler.getProjeID());
+                intent1.putExtra("intentProjeAdi",projeler.getProjeAdi());
+                activity.startActivity(intent1);
             }
         });
-        String icecekIsim=projeler.getProjeAdi().toString();
+
+        personelBilgileriniGosterButon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, personelBilgileriActivity.class);
+                intent.putExtra("intentProjeID",projeler.getProjeID());
+                activity.startActivity(intent);
+
+            }
+        });
 
 
         return satirView;

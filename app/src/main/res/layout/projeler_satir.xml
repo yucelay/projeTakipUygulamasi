@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
 
-    <android.support.v7.widget.LinearLayoutCompat
-        android:layout_weight="2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_gravity="center_vertical">
-            <TextView
-                android:id="@+id/textViewProjeID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="projeId" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="20dp"
+        android:layout_height="70dp" />
 
-        <TextView
-            android:id="@+id/textViewProjeAdi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="projeAdi"/>
-        <TextView
-            android:id="@+id/butonYeniPersonelEkle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Personel Sayısı"/>
-    </android.support.v7.widget.LinearLayoutCompat>
-
-    <android.support.v7.widget.LinearLayoutCompat
+    <LinearLayout
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:id="@+id/projeIDTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="projeID"
+            android:textSize="12dp"/>
+        <TextView
+            android:layout_marginTop="2dp"
+            android:id="@+id/projeAdiTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ProjeAdi"
+            android:textSize="20dp" />
 
-    <android.support.v7.widget.AppCompatButton
+        <TextView
+            android:layout_marginTop="2dp"
+            android:id="@+id/projePersonelSayisiTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PersonelSayisi"
+            android:textSize="12dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yeni Personel"
-        android:width="100dp"/>
+        android:orientation="vertical">
 
-    <android.support.v7.widget.AppCompatButton
+    <Button
+        android:text="Personel Ekle"
+        android:id="@+id/personelEkleButon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Görevler"
-        android:width="100dp" />
-</android.support.v7.widget.LinearLayoutCompat>
+        android:textSize="10sp"
+        android:width="120dp" />
 
-</android.support.v7.widget.LinearLayoutCompat>
+    <Button
+        android:text="Personel Bilgileri"
+        android:id="@+id/personelBilgileriButon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:width="120dp"/>
+    </LinearLayout>
+
+</LinearLayout>

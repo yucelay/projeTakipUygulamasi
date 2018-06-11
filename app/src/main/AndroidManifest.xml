@@ -24,7 +24,9 @@
         <activity android:name=".arsivActivity" />
         <activity android:name=".tamamlanmisProjelerActivity" />
         <activity android:name=".yapilacaklarActivity" />
-        <activity android:name=".projeEkibiActivity"></activity>
+        <activity android:name=".projeEkibiActivity" />
+        <activity android:name=".personelEkleActivity" />
+        <activity android:name=".personelBilgileriActivity"></activity>
     </application>
 
 </manifest>
