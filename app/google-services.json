@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "989795965800",
+    "firebase_url": "https://projetakipuygulamasi.firebaseio.com",
+    "project_id": "projetakipuygulamasi",
+    "storage_bucket": "projetakipuygulamasi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989795965800:android:ab02c204c09491cc",
+        "android_client_info": {
+          "package_name": "com.example.yucel.projetakipuygulamasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "989795965800-gmfsfsomjfc9kopv028pauq946rqb7u5.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "989795965800-gmfsfsomjfc9kopv028pauq946rqb7u5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy_EvbIwzYQseDBP6cK8gCMP3yog7srFw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

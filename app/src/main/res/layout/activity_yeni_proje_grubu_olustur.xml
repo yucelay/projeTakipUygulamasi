@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".yeniProjeActivity">
+
+    <Button
+        android:id="@+id/projeOlusturButon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Oluştur"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/projeidEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Proje ID"
+        android:inputType="textPersonName|number"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="44dp" />
+
+    <EditText
+        android:id="@+id/projeAdiEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Proje Adı"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/projeidEditText"
+        tools:layout_editor_absoluteX="44dp" />
+
+    <EditText
+        android:id="@+id/personelSayisiEditText"
+        android:layout_width="300dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Projedeki Personel Sayısı"
+        android:inputType="textPersonName|number"
+        app:layout_constraintTop_toBottomOf="@+id/sifreEditText"
+        tools:layout_editor_absoluteX="44dp" />
+
+    <EditText
+        android:id="@+id/sifreEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Şifre"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@+id/projeAdiEditText"
+        tools:layout_editor_absoluteX="44dp" />
+</android.support.constraint.ConstraintLayout>
