@@ -2,7 +2,7 @@ package com.example.yucel.projetakipuygulamasi;
 
 public class projelerDb {
 
-    private String projeAdi,sifre;
+    private String projeAdi,sifre,tarih;
     private int projeID,projedekiPersonelSayisi;
 
 
@@ -10,12 +10,13 @@ public class projelerDb {
 
     }
 
-    public projelerDb(int projeID,String projeAdi,String sifre,int projedekiPersonelSayisi){
+    public projelerDb(int projeID,String projeAdi,String sifre,int projedekiPersonelSayisi,String tarih){
 
         this.projeID = projeID;
         this.projeAdi = projeAdi;
         this.sifre = sifre;
         this.projedekiPersonelSayisi = projedekiPersonelSayisi;
+        this.tarih = tarih;
 
     }
 
@@ -53,6 +54,14 @@ public class projelerDb {
 
     public void setProjedekiPersonelSayisi(int projedekiPersonelSayisi){
         this.projedekiPersonelSayisi=projedekiPersonelSayisi;
+    }
+
+    public String getTarih(){
+        return tarih;
+    }
+
+    public void setTarih(String tarih){
+        this.tarih=tarih;
     }
 
 }

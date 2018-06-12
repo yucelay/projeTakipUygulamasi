@@ -6,13 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class personelEkleActivity extends AppCompatActivity {
-    FirebaseDatabase db;
-
+    private FirebaseDatabase db;
+    private int gelenId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +22,7 @@ public class personelEkleActivity extends AppCompatActivity {
 
         TextView textView44 = findViewById(R.id.textView4);
         Bundle bundle = getIntent().getExtras();
-        final int gelenId = bundle.getInt("intentProjeID");
+        gelenId = bundle.getInt("intentProjeID");
         String gelenProjeAdi = bundle.getString("intentProjeAdi");
         textView44.setText("#"+String.valueOf(gelenId)+" - "+ gelenProjeAdi);
 
@@ -42,13 +43,12 @@ public class personelEkleActivity extends AppCompatActivity {
 
     }
 
-
-
     private void personelEkle(int projeID, String p_adi_soyadi, String p_sifre, String p_mail){
         DatabaseReference dbRef=db.getReference("personel");
         String key = dbRef.push().getKey();
         DatabaseReference dbRefKey = db.getReference("personel/"+key);
-        dbRefKey.setValue(new personelDb(projeID,p_adi_soyadi,p_sifre,p_mail));
+        dbRefKey.setValue(new personelDb(projeID,p_adi_soyadi,p_sifre,p_mail,key));
+        Toast.makeText(getApplicationContext(),"Personel eklendi.",Toast.LENGTH_SHORT).show();
     }
 
 

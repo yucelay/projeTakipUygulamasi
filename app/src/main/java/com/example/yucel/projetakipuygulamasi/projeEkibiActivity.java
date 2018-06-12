@@ -16,16 +16,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class projeEkibiActivity extends AppCompatActivity {
-    FirebaseDatabase db;
-
-    TextView projeListesiTextView;
-    ListView projeListesiListView,listView2;
-    projelerDb proje;
-
-    ArrayList<projelerDb> projeListesi =new ArrayList<projelerDb>();
+    private FirebaseDatabase db;
+    private TextView projeListesiTextView;
+    private ListView projeListesiListView,listView2;
+    private projelerDb proje;
+    private ArrayList<projelerDb> projeListesi =new ArrayList<projelerDb>();
    // ArrayList<Icecek> icecekler = new ArrayList<Icecek>();
-    OzelAdaptor adaptor;
-    ArrayAdapter<String> veriAdaptoru;
+    private OzelAdaptor adaptor;
+    private ArrayAdapter<String> veriAdaptoru;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,23 +40,25 @@ public class projeEkibiActivity extends AppCompatActivity {
         adaptor = new OzelAdaptor(this,projeListesi);
         projeListesiListView.setAdapter(adaptor);
 
-
-
         projeleriGetirMetodu();
     }
     public void projeleriGetirMetodu(){
+
         DatabaseReference projeleriGetir=db.getReference("projeler");
         projeleriGetir.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                projeListesi.clear();
                 for (DataSnapshot gelenler:dataSnapshot.getChildren()){
                     int projeID = gelenler.getValue(projelerDb.class).getProjeID();
                     String projeAdi = gelenler.getValue(projelerDb.class).getProjeAdi();
                     int personelSayisi = gelenler.getValue(projelerDb.class).getProjedekiPersonelSayisi();
-                    projeListesi.add(new projelerDb(projeID,projeAdi,"",personelSayisi));
+                    projeListesi.add(new projelerDb(projeID,projeAdi,"",personelSayisi,""));
                     adaptor.notifyDataSetChanged();
 
+                   // Toast.makeText(getApplicationContext(),String.valueOf(gelenler.),Toast.LENGTH_SHORT).show();
                 }
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

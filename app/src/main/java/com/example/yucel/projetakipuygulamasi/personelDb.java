@@ -2,7 +2,7 @@ package com.example.yucel.projetakipuygulamasi;
 
 public class personelDb {
 
-    private String p_adi_soyadi,p_sifre,p_mail;
+    private String p_adi_soyadi,p_sifre,p_mail,p_key;
     private int projeID;
 
 
@@ -10,12 +10,13 @@ public class personelDb {
 
     }
 
-    public personelDb(int projeID,String p_adi_soyadi,String p_sifre,String p_mail){
+    public personelDb(int projeID,String p_adi_soyadi,String p_sifre,String p_mail,String p_key){
 
         this.projeID = projeID;
         this.p_adi_soyadi = p_adi_soyadi;
         this.p_sifre = p_sifre;
         this.p_mail = p_mail;
+        this.p_key = p_key;
 
     }
 
@@ -53,6 +54,14 @@ public class personelDb {
 
     public void setP_mail(String p_mail){
         this.p_mail = p_mail;
+    }
+
+    public String getP_key(){
+        return p_key;
+    }
+
+    public void setP_key(String p_key){
+        this.p_key = p_key;
     }
 
 }

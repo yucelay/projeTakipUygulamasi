@@ -27,15 +27,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:text="ProjeAdi"
-            android:textColor="#e74e0303"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20dp" />
 
         <TextView
             android:layout_marginTop="2dp"
-            android:id="@+id/projePersonelSayisiTextView"
+            android:layout_gravity="right"
+            android:layout_marginRight="16dp"
+            android:id="@+id/projeTarih"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PersonelSayisi"
+            android:text="12.06.2018"
             android:textSize="12dp"/>
 
     </LinearLayout>
@@ -45,23 +47,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <Button
-        android:text="Personel Ekle"
-        android:id="@+id/personelEkleButon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:width="120dp"
-        android:layout_marginRight="8dp"/>
+        <Button
+            android:text="Görevler"
+            android:id="@+id/gorevleriGosterButon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:width="120dp"
+            android:layout_marginRight="8dp"/>
 
-    <Button
-        android:text="Personel Bilgileri"
-        android:id="@+id/personelBilgileriButon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:width="120dp"
-        android:layout_marginRight="8dp"/>
+        <Button
+            android:text="Projeyi Sil"
+            android:id="@+id/projeyiSilButon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:width="120dp"
+            android:layout_marginRight="8dp"/>
     </LinearLayout>
 
 </LinearLayout>
