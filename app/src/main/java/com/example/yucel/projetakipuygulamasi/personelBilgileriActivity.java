@@ -28,9 +28,7 @@ public class personelBilgileriActivity extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         seciliProjeEkibiListView = findViewById(R.id.seciliProjeEkibiListView);
         seciliProjeEkibiAdapter = new personelListesiAdaptor(this,seciliProjeEkibi);
-
         seciliProjeEkibiListView.setAdapter(seciliProjeEkibiAdapter);
-
         textView33 = findViewById(R.id.textView3);
         Bundle bundle = getIntent().getExtras();
         gelenId = bundle.getInt("intentProjeID");

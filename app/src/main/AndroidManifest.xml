@@ -27,7 +27,8 @@
         <activity android:name=".projeEkibiActivity" />
         <activity android:name=".personelEkleActivity" />
         <activity android:name=".personelBilgileriActivity" />
-        <activity android:name=".gorevlerActivity"></activity>
+        <activity android:name=".gorevlerActivity" />
+        <activity android:name=".yapilacaklarDetayActivity"></activity>
     </application>
 
 </manifest>

@@ -11,13 +11,19 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
-public class OzelAdaptor extends BaseAdapter {
+public class yapilacaklarAdaptor extends BaseAdapter {
+
+    private FirebaseDatabase db;
     private LayoutInflater layoutInflater;
     private List<projelerDb> list;
     private Activity activity;
-    public OzelAdaptor(Activity activity, List<projelerDb> mList){
+    private Button yapilacaklarDetayButon;
+    public yapilacaklarAdaptor(Activity activity, List<projelerDb> mList){
+        db=FirebaseDatabase.getInstance();
         layoutInflater=(LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         list=mList;
         this.activity=activity;
@@ -41,36 +47,26 @@ public class OzelAdaptor extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View satirView;
-        satirView=layoutInflater.inflate(R.layout.projeler_satir, null);
+        satirView=layoutInflater.inflate(R.layout.yapilacaklar_satir, null);
         TextView tvProjeID = satirView.findViewById(R.id.projeIDTextView);
         TextView tvProjeAdi = satirView.findViewById(R.id.projeAdiTextView);
-        TextView tvPersonelSayisi = satirView.findViewById(R.id.projePersonelSayisiTextView);
-        Button personelEkleButon = satirView.findViewById(R.id.personelEkleButon);
-        Button personelBilgileriniGosterButon = satirView.findViewById(R.id.personelBilgileriButon);
+       // TextView tvTarih = satirView.findViewById(R.id.projeTarih);
+        Button yapilacaklarDetayButon = satirView.findViewById(R.id.yapilacaklarDetayButon);
+
 
         final projelerDb projeler=list.get(position);
         tvProjeID.setText("#"+String.valueOf(projeler.getProjeID()));
         tvProjeAdi.setText(projeler.getProjeAdi().toString());
-        tvPersonelSayisi.setText(String.valueOf(projeler.getProjedekiPersonelSayisi())+" kişi");
+        //tvTarih.setText(String.valueOf(projeler.getTarih()));
 
-        personelEkleButon.setOnClickListener(new View.OnClickListener() {
+        yapilacaklarDetayButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, projeler.getProjeID() + " id li proje secildi"+"sifre :"+projeler.getSifre(), Toast.LENGTH_SHORT).show();
-                Intent intent1 = new Intent(activity, personelEkleActivity.class);
+                Toast.makeText(activity, projeler.getProjeID() + " id li proje secildi", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(activity, yapilacaklarDetayActivity.class);
                 intent1.putExtra("intentProjeID",projeler.getProjeID());
-                intent1.putExtra("intentProjeSifre",projeler.getSifre().toString());
                 intent1.putExtra("intentProjeAdi",projeler.getProjeAdi());
                 activity.startActivity(intent1);
-            }
-        });
-
-        personelBilgileriniGosterButon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity, personelBilgileriActivity.class);
-                intent.putExtra("intentProjeID",projeler.getProjeID());
-                activity.startActivity(intent);
 
             }
         });
@@ -78,4 +74,5 @@ public class OzelAdaptor extends BaseAdapter {
 
         return satirView;
     }
+
 }

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class menuActivity extends AppCompatActivity {
-    private Button yeniProjeOlusturButon,projeEkibiButon,tumProjelerButon;
+    private Button yeniProjeOlusturButon,projeEkibiButon,tumProjelerButon,yapilacaklarButon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class menuActivity extends AppCompatActivity {
         yeniProjeOlusturButon = findViewById(R.id.yeniProjeButton);
         projeEkibiButon = findViewById(R.id.projeEkibiButton);
         tumProjelerButon = findViewById(R.id.tumProjelerButton);
+        yapilacaklarButon = findViewById(R.id.yapilacaklarButon);
 
         yeniProjeOlusturButon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +42,14 @@ public class menuActivity extends AppCompatActivity {
                 Intent tumProjelerSayfasi = new Intent(menuActivity.this, tumProjelerActivity.class);
                 startActivity(tumProjelerSayfasi);
 
+            }
+        });
+
+        yapilacaklarButon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent yapilacaklarSayfasi = new Intent(menuActivity.this, yapilacaklarActivity.class);
+                startActivity(yapilacaklarSayfasi);
             }
         });
 

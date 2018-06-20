@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -19,7 +20,6 @@ public class personelListesiAdaptor extends BaseAdapter {
     private LayoutInflater layoutInflater;
     private List<personelDb> list;
     private Activity activity;
-    private Button personelSilButon;
     private personelDb personeller;
     public personelListesiAdaptor(Activity activity, List<personelDb> mList){
         db=FirebaseDatabase.getInstance();
@@ -27,7 +27,6 @@ public class personelListesiAdaptor extends BaseAdapter {
         list=mList;
         this.activity=activity;
     }
-
     @Override
     public int getCount() {
         return list.size();
@@ -47,24 +46,24 @@ public class personelListesiAdaptor extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View satirView;
         satirView=layoutInflater.inflate(R.layout.personel_listesi_satir, null);
-       //TextView tvProjeID = satirView.findViewById(R.id.personelAdiTextView);
-        TextView tvP_Adi = satirView.findViewById(R.id.personelAdiTextView);
+        final TextView tvP_Adi = satirView.findViewById(R.id.personelAdiTextView);
         TextView tvP_mail = satirView.findViewById(R.id.personelEmailTextView);
         Button personelDuzenleButon = satirView.findViewById(R.id.personelDuzenleButon);
-        personelSilButon = satirView.findViewById(R.id.personelSilButon);
+        Button personelSilButon = satirView.findViewById(R.id.personelSilButon);
 
         personeller=list.get(position);
        // tvProjeID.setText("#"+String.valueOf(personeller.getProjeID()));
         tvP_Adi.setText(personeller.getP_adi_soyadi().toString());
         //tvP_mail.setText(personeller.getP_mail().toString());
         tvP_mail.setText(personeller.getP_mail().toString());
+        final String dbKey = personeller.getP_key();
 
         personelSilButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatabaseReference refNew = db.getReference("personel");
-                //Toast.makeText(personelListesiAdaptor.this.activity, personeller.g().toString(),Toast.LENGTH_SHORT).show();
-               refNew.child(personeller.getP_key().toString()).removeValue();
+                refNew.child(dbKey).removeValue();
+                Toast.makeText(personelListesiAdaptor.this.activity,tvP_Adi.getText().toString()+" adli kişi silinmiştir.",Toast.LENGTH_SHORT).show();
             }
         });
 

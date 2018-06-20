@@ -31,12 +31,6 @@ public class projeEkibiActivity extends AppCompatActivity {
         db=FirebaseDatabase.getInstance();
         projeListesiListView = findViewById(R.id.projeListesiListView);
 
-      //  veriAdaptoru = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,projeListesi);
-      //  projeListesiListView.setAdapter(veriAdaptoru);
-
-      //  icecekler.add(new Icecek("lksdaj",12.45));
-      //  icecekler.add(new Icecek("yeniIcecek",16.45));
-
         adaptor = new OzelAdaptor(this,projeListesi);
         projeListesiListView.setAdapter(adaptor);
 
@@ -53,7 +47,8 @@ public class projeEkibiActivity extends AppCompatActivity {
                     int projeID = gelenler.getValue(projelerDb.class).getProjeID();
                     String projeAdi = gelenler.getValue(projelerDb.class).getProjeAdi();
                     int personelSayisi = gelenler.getValue(projelerDb.class).getProjedekiPersonelSayisi();
-                    projeListesi.add(new projelerDb(projeID,projeAdi,"",personelSayisi,""));
+                    String projeSifre = gelenler.getValue(projelerDb.class).getSifre();
+                    projeListesi.add(new projelerDb(projeID,projeAdi,projeSifre,personelSayisi,""));
                     adaptor.notifyDataSetChanged();
 
                    // Toast.makeText(getApplicationContext(),String.valueOf(gelenler.),Toast.LENGTH_SHORT).show();
