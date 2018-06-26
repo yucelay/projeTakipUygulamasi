@@ -3,7 +3,6 @@ package com.example.yucel.projetakipuygulamasi;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,12 +17,9 @@ import java.util.ArrayList;
 public class projeEkibiActivity extends AppCompatActivity {
     private FirebaseDatabase db;
     private TextView projeListesiTextView;
-    private ListView projeListesiListView,listView2;
-    private projelerDb proje;
+    private ListView projeListesiListView;
     private ArrayList<projelerDb> projeListesi =new ArrayList<projelerDb>();
-   // ArrayList<Icecek> icecekler = new ArrayList<Icecek>();
     private OzelAdaptor adaptor;
-    private ArrayAdapter<String> veriAdaptoru;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +46,6 @@ public class projeEkibiActivity extends AppCompatActivity {
                     String projeSifre = gelenler.getValue(projelerDb.class).getSifre();
                     projeListesi.add(new projelerDb(projeID,projeAdi,projeSifre,personelSayisi,""));
                     adaptor.notifyDataSetChanged();
-
-                   // Toast.makeText(getApplicationContext(),String.valueOf(gelenler.),Toast.LENGTH_SHORT).show();
                 }
 
             }

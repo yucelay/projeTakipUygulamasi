@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="20dp"
+        android:layout_height="40dp" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/devamEdenProjeIDTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="projeID"
+            android:textSize="12dp"/>
+
+        <TextView
+            android:id="@+id/devamEdenProjeAdiTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="ProjeAdi"
+            android:textColor="#e74e0303"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/yapilacaklarOnaySayisiTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Tamamlanma"
+            android:textColor="@color/common_google_signin_btn_text_light_pressed"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/projeTamamlanmaOraniTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Tamamlanma"
+            android:textColor="#E11F26"
+            android:textSize="16dp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:text="Tamamlanma"
+            android:id="@+id/yapilacaklarDetayButon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:width="120dp"
+            android:layout_marginRight="8dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

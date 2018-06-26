@@ -1,49 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/login_new"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="144dp"
-        android:layout_height="112dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/usericon" />
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="Yönetici Girişi"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#FFF"
+        android:textSize="30dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="144dp"
+        android:layout_height="112dp"
+        app:srcCompat="@drawable/usericon" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="247dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
+        android:drawableLeft="@drawable/ic_action_user_text_ico"
         android:ems="10"
+        android:hint="E-Mail"
         android:inputType="textPersonName"
-        android:text="E-Mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:background="@drawable/border_radius" />
+
 
     <EditText
         android:id="@+id/editText2"
@@ -52,12 +44,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
+        android:drawableLeft="@drawable/ic_action_pass_text_ico"
         android:ems="10"
+        android:hint="Şifre"
         android:inputType="textPersonName"
-        android:text="Şifre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        android:background="@drawable/border_radius" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -66,10 +57,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
-        android:text="Beni Hatırla"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        android:textColor="#FFF"
+        android:text="Beni Hatırla" />
 
     <Button
         android:id="@+id/girisYapButon"
@@ -80,8 +69,5 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:text="Giriş Yap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
-</android.support.constraint.ConstraintLayout>
+        android:background="@drawable/buton_backgroud"/>
+</LinearLayout>

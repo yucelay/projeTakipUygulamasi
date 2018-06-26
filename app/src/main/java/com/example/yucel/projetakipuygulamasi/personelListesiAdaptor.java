@@ -52,9 +52,7 @@ public class personelListesiAdaptor extends BaseAdapter {
         Button personelSilButon = satirView.findViewById(R.id.personelSilButon);
 
         personeller=list.get(position);
-       // tvProjeID.setText("#"+String.valueOf(personeller.getProjeID()));
         tvP_Adi.setText(personeller.getP_adi_soyadi().toString());
-        //tvP_mail.setText(personeller.getP_mail().toString());
         tvP_mail.setText(personeller.getP_mail().toString());
         final String dbKey = personeller.getP_key();
 
@@ -63,7 +61,7 @@ public class personelListesiAdaptor extends BaseAdapter {
             public void onClick(View view) {
                 DatabaseReference refNew = db.getReference("personel");
                 refNew.child(dbKey).removeValue();
-                Toast.makeText(personelListesiAdaptor.this.activity,tvP_Adi.getText().toString()+" adli kişi silinmiştir.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(personelListesiAdaptor.this.activity,tvP_Adi.getText().toString()+" adli kişi silindi.",Toast.LENGTH_SHORT).show();
             }
         });
 

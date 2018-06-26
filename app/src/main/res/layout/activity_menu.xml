@@ -1,86 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center_vertical">
+    android:background="@drawable/login_new">
 
-    <LinearLayout
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/layout1"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_horizontal">
+        android:layout_marginTop="10dp"
+        android:text="Proje Takip Uygulamasi"
+        android:textSize="18dp" />
 
-    <Button
-            android:id="@+id/yeniProjeButton"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:text="Yeni Proje Grubu"/>
-
-    <Button
-        android:id="@+id/projeEkibiButton"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="Proje Ekibi" />
-
-        <Button
-            android:id="@+id/tumProjelerButton"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:text="Tüm Projeler" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_horizontal">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:padding="8dp">
 
 
-    <Button
-        android:id="@+id/devamEdenProjelerButon"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="Devam Eden Projeler" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/yapilacaklarButon"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:text="Yapılacaklar" />
+            <TableRow android:gravity="center">
 
-        <Button
-        android:id="@+id/button7"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="Tamamlanan Projeler" />
-    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:layout_gravity="center_horizontal">
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="180dp"
+                        android:background="@drawable/ozel_border_menu"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/yeniProjeButton"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/proje_add_buton_red" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="#EA3424"></LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Proje Grubu Ekle"
+                            android:textColor="#FFF" />
 
 
+                    </LinearLayout>
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="Test Edilenler" />
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/ozel_border_menu"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="Arşiv" />
+                        <Button
+                            android:id="@+id/projeEkibiButton"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/proje_ekibi_buton" />
 
-</LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="#153BEA"></LinearLayout>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Proje Ekibi"
+                            android:textColor="#FFF" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="180dp"
+                        android:background="@drawable/ozel_border_menu"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/tumProjelerButton"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/tum_projeler_buton" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="#C016EA"></LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Tüm Projeler"
+                            android:textColor="#FFF" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/ozel_border_menu"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/devamEdenProjelerButon"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/devam_eden_projeler_buton" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="#EAA50C"></LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Devam Eden Projeler"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="180dp"
+                        android:background="@drawable/ozel_border_menu"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/yapilacaklarButon"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/yapilacaklar_buton" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="#88FF03"></LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Yapılacaklar"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/ozel_border_menu"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/tamamlanmisProjelerButon"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/tamamlanan_projeler_buton" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="#0ED0FF"></LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Tamamlanan Projeler"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="180dp"
+                        android:background="@drawable/ozel_border_menu"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <Button
+                            android:id="@+id/testEdilmisProjelerButon"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/test_buton"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="#FF0802"></LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Test Edilmiş Projeler"
+                            android:textColor="#FFF" />
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="180dp"
+                    android:background="#000"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="8dp">
+
+                    <Button
+                        android:id="@+id/menuArsivButon"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/arsiv_buton"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="#FB02FF"></LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Arşiv"
+                        android:textColor="#FFF" />
+
+                </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>

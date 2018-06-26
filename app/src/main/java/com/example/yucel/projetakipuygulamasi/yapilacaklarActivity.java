@@ -31,6 +31,7 @@ public class yapilacaklarActivity extends AppCompatActivity {
         yapilacaklarListView.setAdapter(yapilacaklarListAdapter);
         projeleriGetirMetodu();
 
+
     }
 
     public void projeleriGetirMetodu(){

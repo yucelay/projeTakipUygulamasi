@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         girisYapButon=(Button)findViewById(R.id.girisYapButon);
 
 
+
+
         girisYapButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
