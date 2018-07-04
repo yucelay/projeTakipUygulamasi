@@ -6,39 +6,50 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_new"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/prodrom_logo"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/baslik_background"/>
 
 
 
     <TextView
         android:id="@+id/textView"
+        android:layout_marginTop="18dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Yönetici Girişi"
         android:textStyle="bold"
         android:textColor="#FFF"
-        android:textSize="30dp"/>
+        android:textSize="24dp"/>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="144dp"
         android:layout_height="112dp"
+        android:layout_marginTop="10dp"
         app:srcCompat="@drawable/usericon" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextEmail"
         android:layout_width="247dp"
         android:layout_height="45dp"
         android:drawableLeft="@drawable/ic_action_user_text_ico"
         android:ems="10"
+        android:layout_marginTop="18dp"
         android:hint="E-Mail"
         android:inputType="textPersonName"
         android:background="@drawable/border_radius" />
 
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextSifre"
         android:layout_width="247dp"
         android:layout_height="43dp"
         android:layout_marginEnd="8dp"
@@ -47,7 +58,7 @@
         android:drawableLeft="@drawable/ic_action_pass_text_ico"
         android:ems="10"
         android:hint="Şifre"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:background="@drawable/border_radius" />
 
     <CheckBox
@@ -58,7 +69,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:textColor="#FFF"
-        android:text="Beni Hatırla" />
+        android:buttonTint="#00AA00"
+        android:text="Beni Hatırla"
+        android:onClick="itemClicked" />
 
     <Button
         android:id="@+id/girisYapButon"

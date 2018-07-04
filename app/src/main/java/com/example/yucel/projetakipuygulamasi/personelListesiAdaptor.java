@@ -48,7 +48,6 @@ public class personelListesiAdaptor extends BaseAdapter {
         satirView=layoutInflater.inflate(R.layout.personel_listesi_satir, null);
         final TextView tvP_Adi = satirView.findViewById(R.id.personelAdiTextView);
         TextView tvP_mail = satirView.findViewById(R.id.personelEmailTextView);
-        Button personelDuzenleButon = satirView.findViewById(R.id.personelDuzenleButon);
         Button personelSilButon = satirView.findViewById(R.id.personelSilButon);
 
         personeller=list.get(position);

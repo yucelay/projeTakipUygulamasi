@@ -65,16 +65,18 @@
                 android:id="@+id/projeOlusturButon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Oluştur"
-                android:background="#FFF"/>
+                android:text="Oluştur "
+                android:background="#008000"
+                android:drawableLeft="@drawable/proje_ekle_buton_icon2"/>
 
             <Button
                 android:id="@+id/projeOlusturKapatButon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kapat"
-                android:layout_marginLeft="8dp"
-                android:background="#FFF"/>
+                android:text="Kapat "
+                android:layout_marginLeft="10dp"
+                android:background="#656565"
+                android:drawableLeft="@drawable/proje_ekle_kapat_icon"/>
 
 
 

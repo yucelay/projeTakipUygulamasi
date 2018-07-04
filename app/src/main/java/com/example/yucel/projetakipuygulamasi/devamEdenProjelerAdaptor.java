@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -59,8 +60,10 @@ public class devamEdenProjelerAdaptor extends BaseAdapter {
         satirView = layoutInflater.inflate(R.layout.devam_eden_projeler_satir, null);
         final TextView tvProjeID = satirView.findViewById(R.id.devamEdenProjeIDTextView);
         TextView tvProjeAdi = satirView.findViewById(R.id.devamEdenProjeAdiTextView);
+        final ProgressBar progresTamamlanma = satirView.findViewById(R.id.progresTamamlanma);
         final TextView tvYapilacaklarOnaySayisi =satirView.findViewById(R.id.yapilacaklarOnaySayisiTextView);
         final TextView tvProjeTamamlanmaOrani = satirView.findViewById(R.id.projeTamamlanmaOraniTextView);
+        final TextView projeTamamlanmaOraniTextView2 = satirView.findViewById(R.id.projeTamamlanmaOraniTextView2);
         Button gorevleriGosterButon = satirView.findViewById(R.id.gorevleriGosterButon);
         projeyiSilButon = satirView.findViewById(R.id.projeyiSilButon);
         yapilacakDetayImageView = satirView.findViewById(R.id.yapilacakDetayImageView);
@@ -103,23 +106,13 @@ public class devamEdenProjelerAdaptor extends BaseAdapter {
                    }
                     tvProjeTamamlanmaOrani.setText( "Proje %"+tamamlanmaYuzdesi +" Tamamlandı.");
                     System.out.println("yapilacakSayisi 2 :"+ yapilacakSayisi);
-/*
-                    DatabaseReference ref0 =db.getReference("tamamlananProjeler").child(String.valueOf(projeID)).child("projeID");
-                    DatabaseReference ref1 =db.getReference("tamamlananProjeler").child(String.valueOf(projeID)).child("toplamYapilacakSayisi");
-                    DatabaseReference ref2 =db.getReference("tamamlananProjeler").child(String.valueOf(projeID)).child("onayliYapilacakSayisi");
-                    ref0.setValue(projeID);
-                    ref1.setValue(yapilacakSayisi);
-                    ref2.setValue(yapilacakSayisiOnayli);
-
-if (tamamlanmaYuzdesi==100){
-    DatabaseReference ref0 =db.getReference("tamamlananProjeler2").child(String.valueOf(projeID)).child("projeID");
-    ref0.setValue(projeID);
-}
-*/
+                    progresTamamlanma.setProgress(tamamlanmaYuzdesi);
+                    projeTamamlanmaOraniTextView2.setText("%"+String.valueOf(tamamlanmaYuzdesi));
 
                 }else{
                     tvYapilacaklarOnaySayisi.setText("Henüz yapılacak listesi oluşturulmadı.");
                     tvProjeTamamlanmaOrani.setText("Proje %0 Tamamlandı.");
+                    projeTamamlanmaOraniTextView2.setText("%0");
                 }
 
 

@@ -1,8 +1,11 @@
 package com.example.yucel.projetakipuygulamasi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,10 +32,24 @@ public class personelBilgileriActivity extends AppCompatActivity {
         seciliProjeEkibiListView = findViewById(R.id.seciliProjeEkibiListView);
         seciliProjeEkibiAdapter = new personelListesiAdaptor(this,seciliProjeEkibi);
         seciliProjeEkibiListView.setAdapter(seciliProjeEkibiAdapter);
-        textView33 = findViewById(R.id.textView3);
         Bundle bundle = getIntent().getExtras();
         gelenId = bundle.getInt("intentProjeID");
-        textView33.setText(String.valueOf(gelenId));
+
+        TextView proje_baslik_textView;
+        Button sayfalar_menu_buton;
+        proje_baslik_textView = findViewById(R.id.proje_baslik_textView);
+        sayfalar_menu_buton = findViewById(R.id.sayfalar_menu_buton);
+        proje_baslik_textView.setText("Personel Listesi ve Bilgileri");
+
+        sayfalar_menu_buton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent menuSayfasi = new Intent(personelBilgileriActivity.this,menuActivity.class);
+                startActivity(menuSayfasi);
+            }
+        });
+
+
 
         projeleriGetirMetodu();
     }

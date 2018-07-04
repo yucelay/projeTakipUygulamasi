@@ -62,6 +62,7 @@ public class tamamlanmisProjelerAdaptor extends BaseAdapter {
 
                     tvProjeID.setText("#" + String.valueOf(devamEdenler.getProjeID()));
                     tvProjeAdi.setText(devamEdenler.getProjeAdi());
+                    tvprojeTamamlanmaTarihi.setText(devamEdenler.getTarih());
         return satirView;
 
     }

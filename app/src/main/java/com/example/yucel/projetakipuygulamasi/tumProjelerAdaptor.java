@@ -62,7 +62,7 @@ public class tumProjelerAdaptor extends BaseAdapter {
         gorevleriGosterButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, projeler.getProjeID() + " id li proje secildi", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(activity, projeler.getProjeID() + " id li proje secildi", Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(activity, gorevlerActivity.class);
                 intent1.putExtra("intentProjeID",projeler.getProjeID());
                 intent1.putExtra("intentProjeAdi",projeler.getProjeAdi());

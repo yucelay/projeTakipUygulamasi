@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@drawable/list_border_white_opacity">
 
 
     <LinearLayout
@@ -15,7 +16,8 @@
             android:id="@+id/tamamlanmisProjeIDTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="proje Id"
+            android:textColor="#444444"
             android:textSize="12dp"/>
 
 
@@ -26,16 +28,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text=""
-            android:textColor="#e74e0303"
-            android:textSize="16dp" />
+            android:text="Proje Adı"
+            android:textColor="#1C711A"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/projeTamamlanmaTarihTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text=""
+            android:text="Tarih"
             android:textColor="#e74e0303"
             android:textSize="16dp"
             android:layout_gravity="right"

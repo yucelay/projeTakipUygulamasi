@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
-    android:background="@drawable/text_border_public">
+    android:background="@drawable/list_border_public">
 
     <ImageView
         android:id="@+id/imageView"
@@ -37,32 +37,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PersonelSayisi"
-            android:textSize="12dp"/>
+            android:textColor="#101010"
+            android:textSize="14dp"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
 
     <Button
         android:text="Personel Ekle"
         android:id="@+id/personelEkleButon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textSize="8sp"
         android:width="120dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginRight="8dp"
+        android:background="@drawable/buton_backgroud"
+        android:drawableLeft="@drawable/personel_ekle_icon"/>
 
     <Button
         android:text="Personel Bilgileri"
         android:id="@+id/personelBilgileriButon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textSize="8sp"
+        android:layout_marginTop="10dp"
         android:width="120dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginRight="8dp"
+        android:background="@drawable/buton_backgroud"
+        android:drawableLeft="@drawable/personel_bilgi_icon"/>
     </LinearLayout>
 
 </LinearLayout>

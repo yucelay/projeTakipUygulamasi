@@ -50,9 +50,14 @@ public class personelEkleActivity extends AppCompatActivity {
         personelKaydetButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                personelEkle(gelenId,adSoyad.getText().toString(),gelenSifre,mail.getText().toString());
-                adSoyad.setText("");
-                mail.setText("");
+                if (adSoyad.getText().toString().trim().equals("") || mail.getText().toString().trim().equals("")){
+                    Toast.makeText(personelEkleActivity.this, "Lütfen tüm alanları doldurunuz.",Toast.LENGTH_SHORT).show();
+                }else{
+                    personelEkle(gelenId,adSoyad.getText().toString(),gelenSifre,mail.getText().toString());
+                    adSoyad.setText("");
+                    mail.setText("");
+                }
+
             }
         });
 

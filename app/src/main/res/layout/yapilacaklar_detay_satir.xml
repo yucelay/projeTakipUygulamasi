@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@drawable/list_border_white_opacity">
 
     <ImageView
         android:id="@+id/yapilacakDetayImageView"
@@ -26,15 +27,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:text="YapilacakAdi"
-            android:textColor="#e74e0303"
-            android:textSize="12dp" />
+            android:textColor="#000"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/projeIDTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tarih :"
-            android:textSize="8dp"/>
+            android:textSize="14dp"/>
 
 
 

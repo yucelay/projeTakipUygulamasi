@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@drawable/list_border_public">
 
     <ImageView
         android:id="@+id/imageView"
@@ -27,8 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:text="ProjeAdi"
-            android:textColor="#e74e0303"
-            android:textSize="20dp" />
+            android:textColor="#161696"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
 
 
@@ -42,10 +44,11 @@
         <Button
             android:text="Detaylar"
             android:id="@+id/yapilacaklarDetayButon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:width="120dp"
+            android:textSize="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:drawableLeft="@drawable/detay_icon_small_search"
+            android:background="@drawable/buton_backgroud"
             android:layout_marginRight="8dp"/>
 
     </LinearLayout>

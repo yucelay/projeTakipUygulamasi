@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@drawable/list_border_public">
 
     <ImageView
         android:id="@+id/imageView"
@@ -50,20 +51,23 @@
         <Button
             android:text="Görevler"
             android:id="@+id/gorevleriGosterButon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:layout_height="25dp"
             android:textSize="10sp"
-            android:width="120dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:background="@drawable/buton_backgroud"
+            android:drawableLeft="@drawable/tum_projeler_gorevler_buton_ico"
+            />
 
         <Button
             android:text="Projeyi Sil"
             android:id="@+id/projeyiSilButon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:width="120dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_width="110dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buton_backgroud"
+            android:textSize="10dp"
+            android:drawableLeft="@drawable/proje_ekle_kapat_icon" />
     </LinearLayout>
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.yucel.projetakipuygulamasi;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +60,37 @@ public class testEdilmisProjelerAdaptor extends BaseAdapter {
 
 
 
+
+
+
+        final DatabaseReference arsivDekiler=db.getReference("arsiv");
+        arsivDekiler.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot gelenler:dataSnapshot.getChildren()) {
+                    String projeID = gelenler.getKey();
+                    String projeAdi = gelenler.getValue(projelerDb.class).getProjeAdi();
+                    if ((String.valueOf(projeler.getProjeID())).equals(projeID)){
+                        arsiveEkleButon.setEnabled(false);
+                        arsiveEkleButon.setBackgroundColor(Color.rgb(255,255,255));
+                        arsiveEkleButon.setTextColor(Color.rgb(135,135,135));
+                        arsiveEkleButon.setText("Arsive Eklendi");
+                    }
+                    //arsiveEkleButon.setText(String.valueOf(projeler.getProjeID())+"\n"+ projeID);
+                }}
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
+
+
+
         final DatabaseReference projeleriGetir=db.getReference("projeler");
         projeleriGetir.addValueEventListener(new ValueEventListener() {
             @Override
@@ -84,6 +116,9 @@ public class testEdilmisProjelerAdaptor extends BaseAdapter {
                 refId.setValue(projeler.getProjeID());
                 refProjeAdi.setValue(tvProjeAdi.getText());
                 arsiveEkleButon.setEnabled(false);
+                arsiveEkleButon.setBackgroundColor(Color.rgb(255,255,255));
+                arsiveEkleButon.setTextColor(Color.rgb(135,135,135));
+                arsiveEkleButon.setText("Arsive Eklendi");
             }
         });
         return satirView;
